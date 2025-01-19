@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Earn money effortlessly through this passive income website featuring blogs, tools, and affiliate recommendations.">
+    <title>Passive Income Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        nav {
+            background: #333;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        main {
+            padding: 20px;
+        }
+        .calculator, .blog, .affiliate {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .ad-placeholder {
+            background-color: #e0e0e0;
+            height: 250px;
+            width: 100%;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 250px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Passive Income Hub</h1>
+        <p>Your gateway to earning money effortlessly.</p>
+    </header>
+    <nav>
+        <a href="#calculator">Loan Calculator</a>
+        <a href="C:\Users\Admin\Desktop\project j\blog.html">Blogs</a>
+        <a href="#affiliate">Recommended Products</a>
+    </nav>
+    <main>
+        <section class="ad-placeholder">
+            <p>Google Ads Placeholder</p>
+        </section>
+
+        <section class="calculator" id="calculator">
+            <h2>Loan Calculator</h2>
+            <p>Calculate your monthly loan payments easily:</p>
+            <label>Loan Amount:</label><br>
+            <input type="number" id="loanAmount" placeholder="Enter loan amount"><br>
+            <label>Interest Rate (%):</label><br>
+            <input type="number" id="interestRate" placeholder="Enter interest rate"><br>
+            <label>Loan Term (years):</label><br>
+            <input type="number" id="loanTerm" placeholder="Enter loan term"><br>
+            <button class="btn" onclick="calculateLoan()">Calculate</button>
+            <p id="result"></p>
+        </section>
+
+        <section class="blog" id="blogs">
+            <h2>Latest Blogs</h2>
+            <article>
+                <h3>5 Simple Ways to Save Money</h3>
+                <p>Discover easy and effective tips to save money in your daily life.</p>
+                <a href="#">Read more...</a>
+            </article>
+            <article>
+                <h3>How to Start Investing in Stocks</h3>
+                <p>A beginner's guide to understanding the stock market.</p>
+                <a href="#">Read more...</a>
+            </article>
+        </section>
+
+        <section class="affiliate" id="affiliate">
+            <h2>Recommended Products</h2>
+            <ul>
+                <li><a href="#">Amazon Basics Budget Planner</a></li>
+                <li><a href="#">Investment for Beginners eBook</a></li>
+                <li><a href="#">Finance Management Tool</a></li>
+            </ul>
+        </section>
+
+        <section class="ad-placeholder">
+            <p>Google Ads Placeholder</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Passive Income Hub. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function calculateLoan() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+            const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12;
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm)) {
+                document.getElementById('result').innerText = "Please enter valid numbers.";
+                return;
+            }
+            const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+            document.getElementById('result').innerText = `Your monthly payment is $${monthlyPayment.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
